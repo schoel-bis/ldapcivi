@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "civicrm": "latest",
-    "underscore": "latest",
+    "lodash": "latest",
     "ldapjs": "latest"
   },
   "devDependencies": {
@@ -20,6 +20,6 @@
     "mocha": "*"
   },
   "engines": {
-    "node": "0.8.x"
+    "node": "10.x.x"
   }
 }

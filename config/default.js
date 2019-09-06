@@ -1,22 +1,24 @@
-var settings = {}
+const settings = {
+    ldap: {
+        basedn: 'dc=yoursite, dc=org', // "cn=root" another alternative
+        SUFFIX: 'dc=yoursite, dc=org', //base search. If not defined basedn. If unsure, make the same as above.
+        company: 'Your site',
+        port: 1389, // 389 is the ldap port, but needs to run as root (priviledged port
+        password: 'you need to override it',
+        enabled: false // Set this to true
+    },
 
-settings.ldap = {}
-settings.ldap.basedn = "dc=yoursite, dc=org", // "cn=root" another alternative
-settings.ldap.SUFFIX = 'dc=yoursite, dc=org'; //base search. If not defined basedn. If unsure, make the same as above.
-settings.ldap.company = "Your site",
-settings.ldap.port = 1389, // 389 is the ldap port, but needs to run as root (priviledged port
-settings.ldap.password="you need to override it"
-settings.ldap.enabled=false // Set this to true
+    civicrm: {
+        server: 'http://www.example.org',
+        path: '/sites/all/modules/civicrm/extern/rest.php',
+        api_key: 'your api key',
+        key: 'your site key',
+        // "Drupal", "Joomla", or "WordPress"
+        cms: 'Drupal',
 
-settings.civicrm = {}
-settings.civicrm.server ="http://www.example.org"
-settings.civicrm.path = "/sites/all/modules/civicrm/extern/rest.php",
-settings.civicrm.api_key="your api key"
-settings.civicrm.key="your site key"
-// "Drupal", "Joomla", or "WordPress"
-settings.civicrm.cms="Drupal"
-
-settings.civicrm.action="getttpquick"
-//settings.civicrm.action="get" you can use get if you don't install the extension eu.tttp.qlookup
+        action: 'getttpquick'
+        //  action: 'get' you can use get if you don't install the extension eu.tttp.qlookup
+    }
+};
 
 module.exports = settings;
